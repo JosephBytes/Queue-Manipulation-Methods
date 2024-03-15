@@ -5,7 +5,7 @@ import dsa3.LinearNode;
 import java.util.*;
 
 /**
- * An interface for the QueueMethods.
+ * class QueueMethods provides necessary Queue methods.
  * @author Joseph Abdulwahab
  * @version 3/14/2024
  * @param <T> a generic parameter.
