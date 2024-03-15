@@ -1,16 +1,16 @@
 package queues;
 
 /**
- * An interface for a Queue.Specific queue implementations will implement this interface
+ * An interface for queue implementation.
  * @author Joseph Abdulwahab
  * @version final
- * @param <T> - The generic data type of the objects in this queue
+ * @param <T> - The generic data type of the objects in this queue.
  */
-public interface QueueADT<T> extends CollectionADT<T> {
+public interface QueueADT<T>{
        
     /**
      * Removes and returns the element that is at index x in the queue.
-     * Precondition: x must be greater than 0 and x must be less than size (because indexed)
+     * Precondition: x must be greater than 0 and x must be less than size (because indexed).
      * Note: indexing from 0: 0 == front element, 1 == second element, etc.
      * @param x the passed in index of the element to be removed.
      * @return the element removed from the queue.
