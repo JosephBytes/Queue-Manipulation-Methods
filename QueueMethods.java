@@ -11,42 +11,29 @@ import java.util.*;
  * @param <T> a generic parameter.
  */
 public class QueueMethods<T> implements QueueMethodsADT<T> {
-    /** The front node of the queue. */
-    protected LinearNode<T> front;
-    
-    /** The back node of the queue. */
-    protected LinearNode<T> back;
-    
-    /** ArrayList containing the first 3 nodes in the queue. */
-    protected ArrayList<LinearNode<T>> frontThreeNodes;
-    
-    /** ArrayList containing the first 3 elements in the queue. */
-    protected ArrayList<T> frontThreeElements;
-    
-    /** The number of nodes currently in the queue. */
-    protected int numNodes;
-    
-    /**
-     * Constructor- Initializes frontThree ArrayLists.
-     */
-    protected QueueMethods() { 
+    protected LinearNode<T> front;                      //The front node of the queue
+    protected LinearNode<T> back;                       //The back node of the queue
+    protected ArrayList<LinearNode<T>> frontThreeNodes; //ArrayList containing the first 3 nodes in the queue
+    protected ArrayList<T> frontThreeElements;          //ArrayList containing the first 3 elements in the queue
+    protected int numNodes;                             //The number of nodes currently in the queue
+    protected QueueMethods() {                          // Constructor- Initializes frontThree ArrayLists.
         frontThreeNodes = new ArrayList();
         frontThreeElements = new ArrayList();
     }
 
     @Override
     public T dequeue(int x) throws EmptyCollectionException, InvalidArgumentException {
-        if (this.numNodes == 0) { //not empty 
+        if (this.numNodes == 0) {              //not empty 
             throw new EmptyCollectionException("firstThreeElements");
-        } else if (x < 0 || x >= numNodes) { //can't get index not in the queue or negative index. 
+        } else if (x < 0 || x >= numNodes) {   //can't get index not in the queue or negative index. 
             throw new InvalidArgumentException("x");
         } 
         T temp = null;
         LinearNode second = front; 
         if (x == 0) { //index 0 front node dequeue
-            temp = front.getElement();    //store first node element in temp 
-            second = front.getNext();     //move front to node 2
-            if (second != null) {           //if there is a node 2, set its previous to null
+            temp = front.getElement();        //store first node element in temp 
+            second = front.getNext();         //move front to node 2
+            if (second != null) {             //if there is a node 2, set its previous to null
                 front.getNext().setPrev(null);
                 front = front.getNext();  
                 numNodes--;
