@@ -10,7 +10,7 @@ import java.util.*;
  * @version 3/14/2024
  * @param <T> a generic parameter.
  */
-public class QueueMethods<T> implements QueueMethods<T> {
+public class QueueMethods<T> implements QueueMethodsADT<T> {
     /** The front node of the queue. */
     protected LinearNode<T> front;
     
